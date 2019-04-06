@@ -1,0 +1,21 @@
+{
+  "name": "mini-curso",
+  "description": "Mini-curso sobre tecnologias básicas.",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "vitor",
+  "license": "ISC",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mongodb": "^3.2.2",
+    "mongoose": "^5.4.21"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
