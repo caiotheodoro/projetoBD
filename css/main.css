@@ -10,7 +10,7 @@ padding: 0px!important;
 
     .default-menu{  /*barra superior do site*/
     width: 100%;
-    background-color: #3a3732;  
+    background-color: #3a3732;
     height: 55px;
 
     }
@@ -28,7 +28,7 @@ padding: 0px!important;
         }
 
     main {
-    
+
     margin: 0 auto;
     width: 1200px;
     position: relative;
@@ -58,10 +58,10 @@ padding: 0px!important;
         }
             .menu ul li {
             display: inline-block;  /*alinha os li's do menu*/
-            color: #8b8b8b; 
-            margin-left: 15px;  
+            color: #8b8b8b;
+            margin-left: 15px;
             }
-            .menu ul li a { 
+            .menu ul li a {
                 color: #8b8b8b;
                 text-decoration: none;
                 font-size: 13px;
@@ -87,9 +87,82 @@ padding: 0px!important;
             background-repeat: no-repeat;
             background-position: 95%;
             height: 35px;
-            margin-top: 10px;           
+            margin-top: 10px;
             width: 190px;
             padding: 10px;
             border: 1px solid #d6d6d6;
             }
 
+            .slider { /*configurações de todos os slides*/
+              float: left;
+              display: block;
+              height: 300px;
+              width: 600px;
+              margin: auto;
+              margin-top: 5px;
+              margin-left: 620px;
+              position: relative;
+            }
+            .slider li {
+            list-style: none;
+            position: absolute;
+          }
+          .slider img {
+            margin: auto;
+            height: 100%;
+            width: 100%;
+            vertical-align: top;
+          }
+          .slider input {
+            display: none;
+          }
+          .slider label{
+            background-color: #000;
+            bottom: 10px;
+            cursor: pointer;
+            display: block;
+            height: 10px;
+            position: absolute;
+            width: 10px;
+            z-index: 10;
+          }
+          .slider li:nth-child(1) label{
+            left: 10px;
+          }
+          .slider li:nth-child(2) label{
+            left: 40px;
+          }
+          .slider li:nth-child(3) label{
+            left: 70px;
+          }
+          .slider li:nth-child(4) label{
+            left: 100px;
+          }
+          .slider li:nth-child(5) label{
+            left: 130px;
+          }
+          .slider img {
+            opacity: 0;
+            visibility: hidden;
+          }
+          .slider li input:checked ~ img {
+            opacity: 1;
+            visibility: visible;
+            z-index: 10;
+          }
+          .redacoes {
+          width: 30%;
+          float: right;   /*nome do professor*/
+          padding: 20px;
+          }
+          .redacoes{  /*barra depois dos slides*/
+            margin-top: 1px;
+          width: 100%;
+          background-color: #3a3732;
+          height: 55px;
+        }
+          .redacoes ul li a {
+            margin: 810px;
+            color: white;
+            font-size: 30px;
+          }
