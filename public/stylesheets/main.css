@@ -83,7 +83,7 @@ padding: 0px!important;
         float: right;
         }
             .busca input{       /*operacoes no input*/
-            background-image: url(../img/searchButton.png);
+            background-image: url(../images/searchButton.png);
             background-repeat: no-repeat;
             background-position: 95%;
             height: 35px;
@@ -92,26 +92,38 @@ padding: 0px!important;
             padding: 10px;
             border: 1px solid #d6d6d6;
             }
+            .sliders{
+              width: 100%;
+              height: 700px;
+            }
 
             .slider { /*configurações de todos os slides*/
               float: left;
               display: block;
-              height: 300px;
-              width: 600px;
+              height: 639px;
+              width: 1349px;
               margin: auto;
-              margin-top: 5px;
-              margin-left: 620px;
               position: relative;
             }
             .slider li {
             list-style: none;
             position: absolute;
+            overflow: hidden;
           }
           .slider img {
             margin: auto;
-            height: 100%;
             width: 100%;
+            height: 100%;
+            max-width: 100%;
+            -moz-transition: all 0.7s;
+            -webkit-transition: all 0.7s;
+            transition: all 0.7s;
             vertical-align: top;
+          }
+          .slider li:hover img{
+            -moz-transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
           }
           .slider input {
             display: none;
@@ -150,19 +162,100 @@ padding: 0px!important;
             visibility: visible;
             z-index: 10;
           }
-          .redacoes {
-          width: 30%;
-          float: right;   /*nome do professor*/
-          padding: 20px;
+          .redacoes{
+            color: #930000;
+            text-decoration: none;
+            font-size: 15px;
+            margin: 50px;
+            font-family: "Roboto",Arial,sans-serif;
+            font-weight: normal;
+            line-height: 2.2rem;
+        
           }
-          .redacoes{  /*barra depois dos slides*/
-            margin-top: 1px;
-          width: 100%;
-          background-color: #3a3732;
-          height: 55px;
-        }
-          .redacoes ul li a {
-            margin: 810px;
-            color: white;
-            font-size: 30px;
+          .coluna-1 ul li h2{
+            position: relative;
+            left: 0%;
+            right: 5%;
+            bottom: 100%;
+            z-index: 10;
+            color: rgb(44, 38, 48) ;
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+          }
+          .coluna-1{
+            position: relative;
+            width: 75%;
+            height: 100%;
+          }
+
+          .coluna-1 ul li{
+            display: inline-block;
+            margin-left: 40px;
+            width: 255;
+            height: 380;
+          }
+          .coluna-1 ul li a{
+            width: 255;
+            height: 380;
+            overflow: hidden;
+          }
+          .coluna-1 ul li a img{
+            max-width: 100%;
+            -moz-transition: all 0.3s;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;            
+          }
+          .coluna-1 ul li h2{
+            max-width: 100%;
+            -moz-transition: all 0.3s;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;            
+          }
+          .coluna-1 ul li:hover h2{
+            -moz-transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+          }          
+          .coluna-1 ul li a:hover img{
+            -moz-transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+          }
+          .coluna-2 ul li{
+            display: inline-block;
+            margin-left: 40px;
+            width: 255;
+            height: 380;
+          }
+          .coluna-2{
+            width: 100%;
+            height: 100%;
+          }
+          .coluna-2 ul li h2{
+            position: relative;
+            left: 0%;
+            right: 5%;
+            bottom: 110%;
+            z-index: 10;
+            color: rgb(44, 38, 48) ;
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+          }
+          .ver-mais{
+            width: 100%;
+            height: 100%;
+            float: right;
+            margin: 0 auto;
+          }
+          .ver-mais h2{
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 18px;
+          }
+          .col-100{
+            width: 100%;
+            height: 100%;
           }
