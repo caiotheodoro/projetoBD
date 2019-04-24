@@ -259,3 +259,62 @@ padding: 0px!important;
             width: 100%;
             height: 100%;
           }
+          .inputs { 
+            text-align: center;
+            width: 100%;
+            height: 580px;
+            margin: 0 auto;
+            }
+                .inputs input{   
+                background-repeat: no-repeat;
+                background-position: 85%;
+                height: 30px;
+                margin-top: 60px;
+                width: 400px;
+                padding: 10px;
+                border: 2px solid #d6d6d6;
+                }
+                .inputs ul li{
+                  text-align: center;
+                  text-decoration: none;
+                }
+                   .inputs ul li a {
+                  color: #8b8b8b;
+                  font-size: 17px;
+                  text-transform: uppercase;
+                  }
+                  .input-arquivo{
+                    text-align: right;
+                    width: 72%;
+                    height: 150px;
+                    margin: -100px;    
+                    color: #8b8b8b;
+                    font-size: 17px;
+                    text-transform: uppercase;        
+                  }
+                     .input-arquivo ul li a {
+                    color: #8b8b8b;
+                    font-size: 17px;
+                    text-transform: uppercase;
+                    }
+            .enviar-redacao{
+              text-align: center;
+              width: 100%;
+              margin: 0 auto;
+            }
+            .enviar-redacao button{
+                background-color: #df4d40;
+                border: none;
+                color: white;
+                padding: 20px 35px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+            }
+            .tema-select{
+              margin: 50px;
+              float: center;
+              width: 95%;
+            }
+        
