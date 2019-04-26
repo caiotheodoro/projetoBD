@@ -53,13 +53,13 @@ padding: 0px!important;
             }
 
         .menu {
-            width: 80%;
+            width: 100%;
             float: left;
         }
             .menu ul li {
             display: inline-block;  /*alinha os li's do menu*/
             color: #8b8b8b;
-            margin-left: 15px;
+            margin-left: 80px;
             }
             .menu ul li a {
                 color: #8b8b8b;
@@ -74,23 +74,6 @@ padding: 0px!important;
             .menu ul li a:hover {
                 color: #df4d40;         /*muda a cor da fonte do menu*/
 
-            }
-
-
-         .busca {   /*define a localizacao do input*/
-        text-align: center;
-        width: 20%;
-        float: right;
-        }
-            .busca input{       /*operacoes no input*/
-            background-image: url(../images/searchButton.png);
-            background-repeat: no-repeat;
-            background-position: 95%;
-            height: 35px;
-            margin-top: 10px;
-            width: 190px;
-            padding: 10px;
-            border: 1px solid #d6d6d6;
             }
             .sliders{
               width: 100%;
@@ -120,38 +103,22 @@ padding: 0px!important;
             transition: all 0.7s;
             vertical-align: top;
           }
-          .slider li:hover img{
-            -moz-transform: scale(1.1);
-            -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-          }
+
           .slider input {
             display: none;
           }
-          .slider label{
-            background-color: #000;
-            bottom: 10px;
-            cursor: pointer;
-            display: block;
-            height: 10px;
-            position: absolute;
-            width: 10px;
-            z-index: 10;
+        /*  .slider ul li:nth-child(1) img {} */
+          .slider ul li:nth-child(2) img{
+            animation-delay: 5s;
           }
-          .slider li:nth-child(1) label{
-            left: 10px;
+          .slider li:nth-child(3) img{
+            animation-delay: 10s;
           }
-          .slider li:nth-child(2) label{
-            left: 40px;
+          .slider li:nth-child(4) img{
+            animation-delay: 15s;
           }
-          .slider li:nth-child(3) label{
-            left: 70px;
-          }
-          .slider li:nth-child(4) label{
-            left: 100px;
-          }
-          .slider li:nth-child(5) label{
-            left: 130px;
+          .slider li:nth-child(5) img{
+            animation-delay: 20s;
           }
           .slider img {
             opacity: 0;
@@ -161,6 +128,22 @@ padding: 0px!important;
             opacity: 1;
             visibility: visible;
             z-index: 10;
+          }
+          .slider ul li img{
+            position: absolute;
+            opacity: 0;
+            animation-name: slide-animation;
+            animation-duration: 20s;
+            animation-iteration-count: infinite;
+          }
+          @keyframes slide-animation{
+            25%{
+              opacity: 1;
+              transform: scale(1.1,1.1);
+            }
+            50%{
+              opacity: 0;
+            }
           }
           .redacoes{
             color: #930000;
@@ -206,18 +189,7 @@ padding: 0px!important;
             -moz-transition: all 0.3s;
             -webkit-transition: all 0.3s;
             transition: all 0.3s;            
-          }
-          .coluna-1 ul li h2{
-            max-width: 100%;
-            -moz-transition: all 0.3s;
-            -webkit-transition: all 0.3s;
-            transition: all 0.3s;            
-          }
-          .coluna-1 ul li:hover h2{
-            -moz-transform: scale(1.1);
-            -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-          }          
+          }        
           .coluna-1 ul li a:hover img{
             -moz-transform: scale(1.1);
             -webkit-transform: scale(1.1);
@@ -232,6 +204,7 @@ padding: 0px!important;
           .coluna-2{
             width: 100%;
             height: 100%;
+            margin-block-end: 80px;
           }
           .coluna-2 ul li h2{
             position: relative;
@@ -313,8 +286,89 @@ padding: 0px!important;
                 font-size: 16px;
             }
             .tema-select{
-              margin: 50px;
+              margin: 5px;
               float: center;
               width: 95%;
             }
-        
+
+            .redacoes-1{
+              color: #930000;
+              text-decoration: none;
+              font-size: 15px;
+              margin: 50px;
+              font-family: "Roboto",Arial,sans-serif;
+              font-weight: normal;
+              line-height: 0.2rem;
+              width: 40%;
+              float: left;
+            }
+            .filtro{
+              width: 50%;
+              height: 100%;
+              float: right;
+              line-height: 7rem;
+            }
+            .filtro h3{
+              color: #930000;
+              font-family: "Roboto",Arial,sans-serif;
+              float: left;
+            }
+            .filtro select{
+              margin: 68px;
+            }
+
+            .dropbtn {
+              background-color: #930000;
+              color: white;
+              padding: 10px;
+              font-size: 16px;
+              border: none;
+              cursor: pointer;
+              margin-block-start: 55px;
+              margin-left: 10px;
+            }
+            
+            /* Dropdown button on hover & focus */
+            .dropbtn:hover, .dropbtn:focus {
+              background-color: #df4d40;
+            }
+
+            
+            /* The container <div> - needed to position the dropdown content */
+            .tema {
+              position: relative;
+              display: inline-block;
+              
+            }
+            
+            /* Dropdown Content (Hidden by Default) */
+            .tema-content {
+              display: none;
+              position: absolute;
+              background-color: #f6f6f6;
+              min-width: 190px;
+              max-width: 300px;
+              border: 1px solid #ddd;
+              z-index: 1;
+            }
+            
+            /* Links inside the dropdown */
+            .tema-content a {
+              color: black;
+              padding: 2px 11px;
+              text-decoration: none;
+              display: block;
+              line-height: 35px;
+              height: 30px;
+            }
+            
+            /* Change color of dropdown links on hover */
+            .tema-content a:hover {background-color: #f1f1f1}
+            
+         
+            .show {
+              display:block;
+            }
+            .tema-content show{
+              height: 100px;
+            }

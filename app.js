@@ -26,7 +26,9 @@ app.use('/users', usersRouter);
 app.get('/enviarRedacao', function(req, res, next) {
   res.render('enviarRedacao', { title: 'Express' });
 });
-
+app.get('/redacoesCorrigidas', function(req, res, next) {
+  res.render('redacoesCorrigidas', { title: 'Express' });
+});
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
