@@ -39,10 +39,20 @@ app.get('/painelProfessor', function(req, res, next) {
 app.get('/redacao', function(req, res, next) {
   res.render('redacao', { title: 'Express' });
 });
+app.get('/redacoesRecebidas', function(req, res, next) {
+  res.render('redacoesRecebidas', { title: 'Express' });
+});
+app.get('/redacoesPostadas', function(req, res, next) {
+  res.render('redacoesPostadas', { title: 'Express' });
+});
+app.get('/redacaoEdit', function(req, res, next) {
+  res.render('redacaoEdit', { title: 'Express' });
+});
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
 
 // error handler
 app.use(function(err, req, res, next) {
