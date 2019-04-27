@@ -108,18 +108,6 @@ padding: 0px!important;
             display: none;
           }
         /*  .slider ul li:nth-child(1) img {} */
-          .slider ul li:nth-child(2) img{
-            animation-delay: 5s;
-          }
-          .slider li:nth-child(3) img{
-            animation-delay: 10s;
-          }
-          .slider li:nth-child(4) img{
-            animation-delay: 15s;
-          }
-          .slider li:nth-child(5) img{
-            animation-delay: 20s;
-          }
           .slider img {
             opacity: 0;
             visibility: hidden;
@@ -135,15 +123,6 @@ padding: 0px!important;
             animation-name: slide-animation;
             animation-duration: 20s;
             animation-iteration-count: infinite;
-          }
-          @keyframes slide-animation{
-            25%{
-              opacity: 1;
-              transform: scale(1.1,1.1);
-            }
-            50%{
-              opacity: 0;
-            }
           }
           .redacoes{
             color: #930000;
@@ -227,6 +206,9 @@ padding: 0px!important;
           .ver-mais h2{
             font-family: 'Courier New', Courier, monospace;
             font-size: 18px;
+          }
+          .ver-mais ul{
+            width: 120px;
           }
           .col-100{
             width: 100%;
@@ -411,4 +393,72 @@ padding: 0px!important;
                     color: #8b8b8b;
                     font-size: 17px;
                     text-transform: uppercase;
+                    }
+
+                    .tema-redacao {
+                      color: #000;
+                      text-decoration: none;
+                      font-size: 15px;
+                      margin-block-start: 50px;
+                      margin-block-end: 50px;
+                      margin-left: 60px;
+                      font-family: "Roboto",Arial,sans-serif;
+                      font-weight: normal;
+                      line-height: 0.2rem;
+                      width: 100%;
+                      float: left;
+                    }
+                    .titulo-redacao {
+                      color: #000;
+                      text-decoration: none;
+                      font-size: 15px;
+                      margin-block-start: 50px;
+                      margin-block-end: 50px;
+                      margin-left: 60px;
+                      font-family: "Roboto",Arial,sans-serif;
+                      font-weight: normal;
+                      line-height: 0.2rem;
+                      width: 100%;
+                      float: left;
+                    }
+                    .redacao-aluno {
+                        color: #000;
+                        text-decoration: none;
+                        font-size: 15px;
+                        margin-block-start: 50px;
+                        margin-block-end: 50px;
+                        margin-left: 60px;
+                        font-family: "Roboto",Arial,sans-serif;
+                        font-weight: normal;
+                        line-height: 0.2rem;
+                        width: 100%;
+                        float: left;
+                    }
+                    .redacao-corrigida {
+                      color: #000;
+                      text-decoration: none;
+                      font-size: 15px;
+                      margin-block-start: 50px;
+                      margin-block-end: 50px;
+                      margin-left: 60px;
+                      font-family: "Roboto",Arial,sans-serif;
+                      font-weight: normal;
+                      line-height: 0.2rem;
+                      width: 100%;
+                      float: left;
+                    }
+                    .botoes-prof{
+                      margin-left: 50px;
+                      margin-top: 100px;
+                    }
+                    .botoes-prof button{
+                      background-color: #df4d40;
+                      border: none;
+                      color: white;
+                      padding: 20px 70px;
+                      text-align: center;
+                      text-decoration: none;
+                      display: inline-block;
+                      font-size: 16px;
+                      margin-right: 95px;
                     }

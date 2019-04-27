@@ -36,6 +36,9 @@ app.get('/areaProfessor', function(req, res, next) {
 app.get('/painelProfessor', function(req, res, next) {
   res.render('painelProfessor', { title: 'Express' });
 });
+app.get('/redacao', function(req, res, next) {
+  res.render('redacao', { title: 'Express' });
+});
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
