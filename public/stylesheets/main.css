@@ -287,8 +287,9 @@ padding: 0px!important;
             }
             .tema-select{
               margin: 5px;
+              margin-block-start: 20px;
               float: center;
-              width: 95%;
+              width: 99%;
             }
 
             .redacoes-1{
@@ -586,4 +587,14 @@ padding: 0px!important;
                     width: 1000px;
                     float: left;
                     border-bottom: 3px solid #930000;
+                  }
+                  .postar-como input{
+                    margin-block-start: 30px;
+                    width: 14px;
+                    height: 13px;
+                  }
+                  .postar-como h3{
+                    color: #8b8b8b;
+                    font-size: 17px;
+                    text-transform: uppercase;
                   }
