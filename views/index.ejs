@@ -40,30 +40,21 @@
                 </div>
             </div>
         </main>
-        <div class="sliders">
-        <ul class="slider">
-          <li>
-            <input type="radio" id="slide1" name="slide" checked>
-           <img src="./images/slider/slide1.jpg" />
-         </li>
-         <li>
-           <input type="radio" id="slide2" name="slide" checked>
-           <img src="./images/slider/slide2.jpg" />
-         </li>
-         <li>
-           <input type="radio" id="slide3" name="slide" checked>
-           <img src="./images/slider/slide3.jpg" />
-         </li>
-         <li>
-           <input type="radio" id="slide4" name="slide" checked>
-           <img src="./images/slider/slide4.jpg" />
-         </li>
-         <li>
-           <input type="radio" id="slide5" name="slide" checked>
-           <img src="./images/slider/slide5.jpg" />
-         </li>
-        </ul>
+        <div class="contador" style="height:80px;">
+                <h4>PRAZO DE SUBMISSÃO:</h4>
+                 <p id="demo"></p>
+                 <h3>TEMA: INFRAESTRUTURA</h3>
+            </div>
+        <div class="container-slide">
+            <div class="slider">
+                <img class="slide" src="./images/slider/slide1.jpg" />
+                <img class="slide" src="./images/slider/slide2.jpg" />
+                <img class="slide" src="./images/slider/slide3.jpg" />
+                <img class="slide" src="./images/slider/slide4.jpg" />
+                <img class="slide" src="./images/slider/slide5.jpg" />
+            </div>
         </div>
+
         <div class="col-100"style="height: 1000px;">
             <div class="redacoes">
                 <br>
@@ -109,5 +100,29 @@
             </ul>
             </div> 
     </body>
+<script>
+var countDownDate = new Date("May 4, 2019 15:37:25").getTime();
+
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+    
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "D " + hours + "H "
+  + minutes + "M " + seconds + "S ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+</script>
 
 </html>
