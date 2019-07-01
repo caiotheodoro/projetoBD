@@ -29,12 +29,14 @@ app.get('/enviarRedacao', function(req, res, next) {
 app.get('/redacoesCorrigidas', function(req, res, next) {
   res.render('redacoesCorrigidas', { title: 'Express' });
 });
-
-app.get('/areaProfessor', function(req, res, next) {
-  res.render('areaProfessor', { title: 'Express' });
+app.get('/registro', function(req, res, next) {
+  res.render('registro', { title: 'Express' });
 });
-app.get('/painelProfessor', function(req, res, next) {
-  res.render('painelProfessor', { title: 'Express' });
+app.get('/areaAluno', function(req, res, next) {
+  res.render('areaAluno', { title: 'Express' });
+});
+app.get('/painelAluno', function(req, res, next) {
+  res.render('painelAluno', { title: 'Express' });
 });
 app.get('/redacao', function(req, res, next) {
   res.render('redacao', { title: 'Express' });
