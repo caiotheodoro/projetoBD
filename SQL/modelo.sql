@@ -1,13 +1,18 @@
+create database projeto_bd;
+
+use projeto_bd;
+
 CREATE TABLE REDACAO(
-idRedacao INTEGER NOT NULL,
-texto VARCHAR(2000) NOT NULL,
-PRIMARY KEY (idRedacao)
+id_redacao INTEGER , -- AUTO_INCREMENT
+texto VARCHAR(8000) NOT NULL,
+PRIMARY KEY (id_redacao)
 );
 
 CREATE TABLE USUARIO(
-idUsuario INTEGER NOT NULL,
+login_usuario VARCHAR(16) NOT NULL,
+email VARCHAR(30) NOT NULL, 
 senha VARCHAR(16) NOT NULL,
 idRedacao INTEGER,
-FOREIGN KEY (idRedacao) REFERENCES REDACAO,
-PRIMARY KEY (idUsuario)
+FOREIGN KEY (id_redacao) REFERENCES REDACAO,
+PRIMARY KEY (login_usuario,id_redacao)
 );
