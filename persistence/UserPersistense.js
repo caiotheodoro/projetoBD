@@ -4,7 +4,6 @@ class UserPersistence {
     constructor(connection) {
         this.connection = connection
         this.schema = new mongoose.Schema({
-            tag: String,
             name: String,
             email: String,
 
@@ -35,9 +34,9 @@ class UserPersistence {
         })
     }
 
-    findByTag(tag) {
+    findBylogin(login) {
         return new Promise((resolve, reject) => {
-            this.userModel.findOne({ tag: tag}, (err, res) => {
+            this.userModel.findOne({ login: login}, (err, res) => {
                 if(err || red == null){
                     reject(err)
                 }
@@ -45,9 +44,9 @@ class UserPersistence {
             })
         })
     }
-    addRedacao(tag, texto){
+    addRedacao(login, texto){
         return new Promise((resolve, reject) =>{
-            this.userModel.findOndeAndUpdate({ tag: tag},(err, res) => {
+            this.userModel.findOneAndUpdate({ login: login},(err, res) => {
                 if(err){
                     reject(err)
                 }
