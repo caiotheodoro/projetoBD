@@ -1,0 +1,8 @@
+{
+    "address":"localhost",
+    "port": 3000,
+    "db":"projetoBD",
+    "user":"",
+    "pass": ""
+
+}
