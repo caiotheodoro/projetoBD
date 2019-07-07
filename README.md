@@ -4,24 +4,24 @@ Cadastro de usuarios, inseção de redações, atualização de perfil, remover 
 
 
 programas usados:
-Node js
+Node js//
 MongoDB
 
 mongoose//
-npm install mongoose
+npm install mongoose//
 
 
 passport//
-npm install passport
-npm install passport-local
+npm install passport//
+npm install passport-local//
 
 body parser//
-npm install body-parser
+npm install body-parser//
 
 express//
-npm install express
+npm install express//
 
 handlebars//
-npm installexpress-handlebars
+npm install express-handlebars//
 
 
