@@ -1,0 +1,66 @@
+﻿        <header class="default-menu">
+            <main>
+                <div class="header-1">
+
+            
+                <div class="start">
+                <img src="./images/start.png" width="40" height="36"/>
+                </div>
+                     <div class="nome-professor">
+                                <img src="./images/nomeSite.png" width="125" height="28"/>               
+                     </div>
+                </div>
+            </main>
+        </header>
+        <main class="col urls">
+            <div class="header-2">
+                <div class="menu"> 
+                    <ul>
+                        <li>
+                            <a href="/">Pagina Inicial</a>
+                        </li>
+                        {{#if user}}
+                        <li>
+                            <a href="redacoesCorrigidas">Minhas Redações</a>
+                        </li>
+                        <li>
+                            <a href="redacaoSend">Enviar Redação</a>
+                        </li>
+                        <li>
+                            <a href="/logout">Sair</a>
+                        </li>
+                        {{else}}
+                        <li>
+                            <a href="areaAluno">Login</a>
+                        </li>
+                        <li>
+                            <a href="registro">Registrar-se</a>
+                        </li>
+                        {{/if}}
+                    </ul>
+                </div>
+            </div>
+        </main>
+        <form action="" method="post">
+        <div class="col-100">
+            <div class="inputs-redacao">
+                <ul>
+                    <li>
+                        <a>Login: </a>
+                        <input type="text" name="login" maxlength="16" required>
+                    </li>
+                    <li>
+                        <a>Email: </a>
+                        <input type="email" name="email" maxlength="80" required>
+                    </li>
+                    <li>
+                        <a>Senha: </a>
+                        <input type="password" name="senha" maxlength="16" required>
+                    </li>
+                </ul>
+            </div>
+                <div class="enviar-redacao" style=" width: 1349; height: 100px;">
+                     <a href=""><button type="submit">REGISTRAR</button></a>               
+                </div>
+        </div>
+        </form>

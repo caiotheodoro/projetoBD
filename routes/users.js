@@ -1,9 +1,15 @@
-var express = require('express');
-var router = express.Router();
+const express = require("express")
+const router = express.Router()
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+  /*  router.post('/feedback', function(req, res, next) {
+      Post.create({
+          texto: req.body.redacao
+      }).then(function(){
+          res.redirect('/')
+      }).catch(function(erro){
+          res.send("Erro..." + erro)
+      })
+    });
+*/
 
 module.exports = router;
