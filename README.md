@@ -7,21 +7,21 @@ programas usados:
 Node js
 MongoDB
 
-mongoose
+mongoose//
 npm install mongoose
 
 
-passport
+passport//
 npm install passport
 npm install passport-local
 
-body parser
+body parser//
 npm install body-parser
 
-express
+express//
 npm install express
 
-handlebars
+handlebars//
 npm installexpress-handlebars
 
 
