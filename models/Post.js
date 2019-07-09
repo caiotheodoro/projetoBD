@@ -6,7 +6,7 @@ const Redacao = new Schema({
         type: String,
         require: true
     },
-    User: {
+    usuario: {
         type: Schema.Types.ObjectId,
         ref: "usuarios",
         require: true

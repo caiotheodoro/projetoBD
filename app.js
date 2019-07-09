@@ -73,7 +73,7 @@ app.use('/routes/users', users);
     // Rotas (express)
 app.get("/", function(req,res) {
   Post.find().then((redacoes) => {
-    res.render('index', {redacoes: redacoes})
+    res.render('index', {redacoes: redacoes})  // busca todas redacoes do banco e renderiza na pagina inical ("/")
   })
   })
 app.get('/enviarRedacao', function(req, res, next) {
@@ -85,7 +85,7 @@ app.get('/enviarRedacao', function(req, res, next) {
     })
   });
   app.get("/redacoesCorrigidas/edit/:id",(req, res) => {
-    Post.findOne({_id: req.params.id}).then((redacoes) => {
+    Post.findOne({_id: req.params.id}).then((redacoes) => { //acha a redacao no banco e a renderiza na pagina de edicao
    res.render("redacaoEdit", {redacoes: redacoes})
     })
   })
@@ -114,8 +114,16 @@ app.get('/enviarRedacao', function(req, res, next) {
     res.render('redacaoSend', { title: 'Express' });
   });
 
- app.post('/feedback', (req, res)  => {
 
+
+ app.post('/feedback', (req, res)  => { //cria a redacao
+
+  Usuario.findOne({_id: req.body.id}).then((redacoes) => { 
+
+    redacoes.usuario = req.body.id
+
+    redacoes.usuario.save();
+  })
 
     const novoPost = {
         texto: req.body.redacao
@@ -123,10 +131,13 @@ app.get('/enviarRedacao', function(req, res, next) {
     new Post(novoPost).save().then(() =>{
       res.redirect('/redacoesCorrigidas')
   }).catch((err) =>{
-    res.send("Erro..." + erro)
+    res.send("Erro..." + err)
   })
   });
-  app.post("/redacoesCorrigidas/edit", (req,res) => {
+
+
+
+  app.post("/redacoesCorrigidas/edit", (req,res) => { // edita a redacao
     Post.findOne({_id: req.body.id}).then((redacoes) => {
 
       redacoes.texto = req.body.texto
@@ -135,20 +146,21 @@ app.get('/enviarRedacao', function(req, res, next) {
         res.redirect("/redacoesCorrigidas")
       })
     })
+    
   })
-  app.get("/redacoesCorrigidas/deletar/:id", (req,res) => {
+  app.get("/redacoesCorrigidas/deletar/:id", (req,res) => { //deleta a redacao
     Post.remove({_id: req.params.id}).then(() => {
       res.redirect("/redacoesCorrigidas")
     })
   })
 
 app.get("/redacao/:id", (req,res) => {
-    Post.findOne({_id: req.params.id}).then((redacoes) => {
+    Post.findOne({_id: req.params.id}).then((redacoes) => { //acha a redacao no banco e a renderiza para visualizacao
       res.render("redacao", {redacoes: redacoes})
     })
 })
 app.post("/registro", (req,res) => {
-  Usuario.findOne({login: req.body.login}).then((usuarios) => {
+  Usuario.findOne({login: req.body.login}).then((usuarios) => { //insere o novo usuario no banco
     if(usuarios){
       res.redirect("/registro")
     } else {
@@ -174,7 +186,7 @@ app.post("/registro", (req,res) => {
   })
 })
 
-app.post("/areaAluno", (req, res, next) => {
+app.post("/areaAluno", (req, res, next) => { //verifica autenticacao de login do usuario
 
   passport.authenticate('local', {
     successRedirect: "/",
@@ -182,7 +194,7 @@ app.post("/areaAluno", (req, res, next) => {
     failureFlash: true
   })(req, res, next) 
 })
-app.get("/logout", (req,res) => {
+app.get("/logout", (req,res) => { //sai da sessao do usuario
     req.logout()
     res.redirect("/")
 })
