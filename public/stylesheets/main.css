@@ -47,7 +47,7 @@ padding: 0px!important;
 
             .header-2 {
             background-color: #ffffff;
-            width: 980px;
+            width: 1200px;
             margin: 0 auto;
             padding: 2px;
             }
@@ -1008,11 +1008,13 @@ padding: 0px!important;
                       float: left;
                     }
                     .botoes-prof{
-                      margin-left: 50px;
-                      margin-top: 100px;
+                        float: right;
+                        position: relative;
+                        margin-left: 50px;
+                        margin-top: 100px;
+                        margin-right: 280px;
                     }
                     .botoes-prof button{
-                      background-color: #df4d40;
                       border: none;
                       color: white;
                       padding: 20px 70px;

@@ -1,4 +1,11 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./stylesheets/main.css">
+        <title> Projeto BD </title>
+        
+    </head>
 
+    <body>
         <header class="default-menu">
             <main>
                 <div class="header-1">
@@ -26,10 +33,10 @@
                         </li>
                          <li>
                             <a href="redacaoSend">Enviar Redação</a>
-                        </li>  
+                        </li>    
                         <li>
                             <a href="crudAluno">Conta</a>
-                        </li>                       
+                        </li>                      
                         <li>
                             <a href="/logout">Sair</a>
                         </li>
@@ -47,10 +54,13 @@
         </main>
         <div class="col-100">
             <div class="botoes-prof">
+                {{#if user}}
                 <ul>
-                        <a href="redacaoSend"><button>ENVIAR REDACÃO </button></a> 
-                        <a href="redacoesCorrigidas"><button>MINHAS REDAÇÕES</button></a> 
- 
-                </ul>   
+                        <a href="/crudAluno/edit/{{user._id}}"><button class="btn btn-primary">EDITAR CONTA </button></a> 
+                        <a href="/crudAluno/deletar/{{user._id}}"><button class="btn btn-danger mt-2">DELETAR CONTA</button></a>  
+                </ul> 
+                {{else}}
+                {{/if}}  
             </div>
         </div>
+</html>

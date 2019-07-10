@@ -95,8 +95,14 @@ app.get('/enviarRedacao', function(req, res, next) {
   app.get("/redacoesCorrigidas/edit/:id",(req, res) => {
     res.render("redacaoEdit")
   })
+  app.get('/usuarioEdit', function(req, res, next) {
+    res.render('usuarioEdit', { title: 'Express' });
+  });
   app.get('/registro', function(req, res, next) {
     res.render('registro', { title: 'Express' });
+  });
+  app.get('/crudAluno', function(req, res, next) {
+    res.render('crudAluno', { title: 'Express' });
   });
   app.get('/areaAluno', function(req, res, next) {
     res.render('areaAluno', { title: 'Express' });
@@ -118,12 +124,12 @@ app.get('/enviarRedacao', function(req, res, next) {
 
  app.post('/feedback', (req, res)  => { //cria a redacao
 
-  Usuario.findOne({_id: req.body.id}).then((redacoes) => { 
+  // Usuario.findOne({_id: req.body.id}).then((redacoes) => { 
 
-    redacoes.usuario = req.body.id
+  //   redacoes.usuario = req.body.id
 
-    redacoes.usuario.save();
-  })
+  //   redacoes.usuario.save();
+  // })
 
     const novoPost = {
         texto: req.body.redacao
@@ -135,7 +141,14 @@ app.get('/enviarRedacao', function(req, res, next) {
   })
   });
 
-
+  app.get("/crudAluno/edit/:id",(req, res) => {
+    Usuario.findOne({_id: req.params.id}).then((usuarios) => { //acha a redacao no banco e a renderiza na pagina de edicao
+   res.render("usuarioEdit", {usuarios: usuarios})
+    })
+  })
+  app.get("/crudAluno/edit/:id",(req, res) => {
+    res.render("usuarioEdit")
+  })
 
   app.post("/redacoesCorrigidas/edit", (req,res) => { // edita a redacao
     Post.findOne({_id: req.body.id}).then((redacoes) => {
@@ -153,6 +166,33 @@ app.get('/enviarRedacao', function(req, res, next) {
       res.redirect("/redacoesCorrigidas")
     })
   })
+  app.post("/crudAluno/edit", (req,res) => { // edita a redacao
+    Usuario.findOne({_id: req.body.id}).then((usuarios) => {
+
+      usuarios.login = req.body.login,
+      usuarios.email = req.body.email,
+      usuarios.senha = req.body.senha
+
+      bcrypt.genSalt(10, (erro, salt) => {
+        bcrypt.hash(usuarios.senha, salt,(erro, hash) => {
+          if(erro){
+            res.redirect("/usuarioEdit")
+          }
+          usuarios.senha = hash
+
+          usuarios.save().then(() => {
+            res.redirect("/")
+          })
+        })
+      })
+    })
+    
+  })
+  app.get("/crudAluno/deletar/:id", (req,res) => { //deleta a redacao
+    Usuario.remove({_id: req.params.id}).then(() => {
+      res.redirect("/")
+    })
+  }) 
 
 app.get("/redacao/:id", (req,res) => {
     Post.findOne({_id: req.params.id}).then((redacoes) => { //acha a redacao no banco e a renderiza para visualizacao
