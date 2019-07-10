@@ -25,3 +25,8 @@ handlebars//
 npm install express-handlebars//
 
 
+Como usar: 
+Abra o servidor mongo: (mongod)
+Abra o localhost node na pasta do projeto: (node app.js)
+
+
